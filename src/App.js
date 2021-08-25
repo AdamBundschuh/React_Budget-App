@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <h2>Adam's Budgeting Application!</h2>
-      <Expenses expenses={expenses} />
+      <Expenses expense={expenses} />
     </div>
   );
 }
