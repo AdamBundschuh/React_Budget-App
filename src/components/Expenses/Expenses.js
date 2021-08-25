@@ -2,7 +2,7 @@ import "./Expenses.css";
 import ExpenseItem from "./ExpenseItem.js";
 import Card from "../UI/Card.js";
 
-function Expenses(props) {
+const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpenseItem
