@@ -1,31 +1,13 @@
 import React, { useState } from "react";
 import "./NewExpenseForm.css";
 
-const NewExpenseForm = () => {
+const NewExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
-  //   const [userInput, setUserInput] = useState({
-  //     enteredTitle: "",
-  //     enteredAmount: "",
-  //     enteredDate: "",
-  //   });
-
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-
-    // setUserInput({
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
-
-    // Whenever you update a state and rely on the previous state, pass a function to the setXXX function
-    // This will guarantee latest state snapshot, always operating on the latest state
-
-    // setUserInput((previousState) => {
-    //   return { ...previousState, enteredTitle: event.target.value };
-    // });
   };
 
   const amountChangeHandler = (event) => {
@@ -45,7 +27,8 @@ const NewExpenseForm = () => {
       date: new Date(enteredDate),
     };
 
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
+
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
