@@ -36,10 +36,9 @@ const App = () => {
   return (
     <div>
       <h2>Adam's Budgeting Application!</h2>
-      
+
       <NewExpense onAddExpense={addExpenseHandler} />
-      
-      
+
       <Expenses items={expenses} />
     </div>
   );
